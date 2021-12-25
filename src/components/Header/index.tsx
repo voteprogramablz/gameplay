@@ -6,6 +6,7 @@ import { theme } from "../../global/styles/theme";
 import { Feather } from "@expo/vector-icons";
 
 import { styles } from "./styles";
+import { useNavigation } from "@react-navigation/native";
 
 type Props = {
   title: string;
@@ -14,13 +15,20 @@ type Props = {
 
 export default function Header({ title, action }: Props) {
   const { secondary100, secondary40, heading } = theme.colors;
+
+  const navigation = useNavigation();
+
+  function handleGoBack() {
+    navigation.goBack();
+  }
+
   return (
     <LinearGradient
       style={styles.container}
       colors={[secondary100, secondary40]}
     >
-      <BorderlessButton>
-        <Feather name="arrow-left" size={24} colors={heading} />
+      <BorderlessButton onPress={handleGoBack}>
+        <Feather name="arrow-left" size={24} color={heading} />
       </BorderlessButton>
 
       <Text style={styles.title}>{title}</Text>
