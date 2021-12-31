@@ -53,19 +53,17 @@ export function Home() {
   }
 
   function handleAppointmentDetails() {
-    navigation.navigate("AppointmentDetails")
+    navigation.navigate("AppointmentDetails");
   }
   function handleAppointmentCreate() {
-    navigation.navigate("AppointmentCreate")
+    navigation.navigate("AppointmentCreate");
   }
 
   return (
     <Background>
       <View style={styles.header}>
         <Profile />
-        <ButtonAdd 
-          onPress={handleAppointmentCreate}
-        />
+        <ButtonAdd onPress={handleAppointmentCreate} />
       </View>
 
       <View>
@@ -76,22 +74,18 @@ export function Home() {
         />
       </View>
 
-      <View style={styles.content}>
-        <ListHeader title="Partidas agendadas" subtitle="Total 6" />
-
-        <FlatList
-          data={appointments}
-          keyExtractor={(item) => item.id}
-          renderItem={({ item }) => 
-          <Appointment 
-          data={item} 
-          onPress={handleAppointmentDetails}
-          />}
-          style={styles.matches}
-          showsVerticalScrollIndicator={false}
-          ItemSeparatorComponent={() => <ListDivider />}
-        />
-      </View>
+      <ListHeader title="Partidas agendadas" subtitle="Total 6" />
+      <FlatList
+        data={appointments}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => (
+          <Appointment data={item} onPress={handleAppointmentDetails} />
+        )}
+        style={styles.matches}
+        showsVerticalScrollIndicator={false}
+        ItemSeparatorComponent={() => <ListDivider />}
+        contentContainerStyle={{ paddingBottom: 69 }}
+      />
     </Background>
   );
 }

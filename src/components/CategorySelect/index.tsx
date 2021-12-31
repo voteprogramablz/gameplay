@@ -30,8 +30,8 @@ export function CategorySelect({
           key={category.id}
           title={category.title}
           icon={category.icon}
-          checked={category.id === categorySelected}
           onPress={() => setCategory(category.id)}
+          checked={category.id === categorySelected}
           hasCheckBox={hasCheckBox}
         />
       ))}

@@ -15,19 +15,37 @@ export default function Guilds({ handleGuildSelect }: Props) {
     {
       id: "1",
       name: "Lendários",
-      icon: 'image.png',
+      icon: "image.png",
       owner: true,
     },
     {
       id: "2",
       name: "Pain",
-      icon: 'image.png',
+      icon: "image.png",
       owner: true,
     },
     {
       id: "3",
       name: "Kabum",
-      icon: 'image.png',
+      icon: "image.png",
+      owner: true,
+    },
+    {
+      id: "4",
+      name: "Ninjas",
+      icon: "image.png",
+      owner: true,
+    },
+    {
+      id: "5",
+      name: "HyperX",
+      icon: "image.png",
+      owner: true,
+    },
+    {
+      id: "6",
+      name: "Poneis de Pijama",
+      icon: "image.png",
       owner: true,
     },
   ];
@@ -39,9 +57,11 @@ export default function Guilds({ handleGuildSelect }: Props) {
         renderItem={({ item }) => (
           <Guild data={item} onPress={() => handleGuildSelect(item)} />
         )}
-        ItemSeparatorComponent={() => <ListDivider />}
         showsVerticalScrollIndicator={false}
         style={styles.guilds}
+        contentContainerStyle={{ paddingBottom: 68, paddingTop: 103 }}
+        ItemSeparatorComponent={() => <ListDivider isCentered />}
+        ListHeaderComponent={() => <ListDivider isCentered />}
       />
     </View>
   );

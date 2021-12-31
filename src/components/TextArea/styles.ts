@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   container: {
-    width: '100%',
+    width: "100%",
     height: 95,
     backgroundColor: theme.colors.secondary40,
     color: theme.colors.heading,
@@ -11,6 +11,10 @@ export const styles = StyleSheet.create({
     fontFamily: theme.fonts.text400,
     fontSize: 13,
     marginRight: 4,
-    textAlign: "center",
+    borderWidth: 1,
+    borderColor: theme.colors.secondary50,
+    paddingHorizontal: 16,
+    paddingTop: 16,
+    textAlignVertical: "top",
   },
 });

@@ -32,7 +32,8 @@ export const styles = StyleSheet.create({
   image: {
     width: 64,
     height: 68,
-    backgroundColor: theme.colors.secondary50,
+    backgroundColor: theme.colors.secondary40,
+    borderColor: theme.colors.secondary50,
     borderWidth: 1,
     borderRadius: 8,
   },
@@ -55,10 +56,10 @@ export const styles = StyleSheet.create({
   caracteresLimit: {
     fontFamily: theme.fonts.text400,
     fontSize: 13,
-    color: theme.colors.heading
+    color: theme.colors.heading,
   },
   footer: {
     marginVertical: 20,
-    marginBottom: 56
-  }
+    marginBottom: 56,
+  },
 });
