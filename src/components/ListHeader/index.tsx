@@ -1,10 +1,10 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { View, Text } from "react-native";
 import { styles } from "./styles";
 
 type Props = {
   title: string;
-  subtitle: string;
+  subtitle: string | ReactNode;
 };
 
 export function ListHeader({ title, subtitle }: Props) {

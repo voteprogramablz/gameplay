@@ -7,6 +7,7 @@ LogBox.ignoreLogs([
   "You are not currently signed in to Expo on your development machine",
 ]);
 
+
 import { Routes } from "./src/routes";
 import { Background } from "./src/components/Background";
 import { AuthProvider } from "./src/hooks/auth";

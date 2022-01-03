@@ -12,7 +12,7 @@
     "babel.config.js": true,
     "metro.config.js": true,
     "package-lock.json": true,
-    "tsconfig.json": true,
+    // "tsconfig.json": true,
     "yarn.lock": true
   }
 }
