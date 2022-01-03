@@ -1,13 +1,27 @@
 import React from "react";
-import { Image } from "react-native";
-import { RectButton, RectButtonProps } from "react-native-gesture-handler";
+import { Image, View } from "react-native";
 
 import { styles } from "./styles";
 
-export type GuildProps = {};
+import DiscordSvg from "../../assets/discord.svg";
 
-export function GuildIcon() {
-  const uri =
-    "https://i.pinimg.com/564x/13/af/38/13af386d6c652038bdcd0aa2613e72a5.jpg";
-  return <Image source={{ uri }} style={styles.image} resizeMode="cover" />;
+const { CDN_IMAGE } = process.env;
+
+type Props = {
+  guildId: string;
+  iconId: string | null;
+};
+
+export function GuildIcon({ guildId, iconId }: Props) {
+  const uri = `${CDN_IMAGE}/icons/${guildId}/${iconId}.png`;
+
+  return (
+    <View style={styles.container}>
+      {iconId ? (
+        <Image source={{ uri }} style={styles.image} resizeMode="cover" />
+      ) : (
+        <DiscordSvg width={40} height={40} />
+      )}
+    </View>
+  );
 }
